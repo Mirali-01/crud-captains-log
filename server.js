@@ -83,6 +83,17 @@ app.delete("/logs/:id", (req, res) => {
   });
 });
 
+// [EDIT]
+app.get("/logs/:id/edit", (req, res) => {
+  Log.findById(req.params.id, (err, foundLog) => {
+    !err
+      ? res.render("Edit", {
+          log: foundLog,
+        })
+      : res.send({ msg: err.message });
+  });
+});
+
 // Listen
 app.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}`);
