@@ -70,8 +70,17 @@ app.post("/logs", (req, res) => {
   req.body.shipIsBroken === "on"
     ? (req.body.shipIsBroken = true)
     : (req.body.shipIsBroken = false);
-  res.send(req.body);
-  res.redirect("Show");
+  Log.create(req.body, (error, createdLog) => {
+    res.redirect("/logs");
+    console.log(createdLog);
+  });
+});
+
+// [DELETE]
+app.delete("/logs/:id", (req, res) => {
+  Log.findByIdAndDelete(req.params.id, (err, data) => {
+    res.redirect("/logs");
+  });
 });
 
 // Listen

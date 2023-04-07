@@ -5,10 +5,12 @@ export class Show extends Component {
     return (
       <div>
         <h1>Logs Show Page</h1>
-        {this.props.log.title} <br />
-        {this.props.log.entry} <br />
-        {/* {this.props.log.timestamps} <br /> */}
-        {this.props.log.shipIsBroken ? "true" : "false"} <br />
+        Title: {this.props.log.title} <br />
+        Entry: {this.props.log.entry} <br />
+        Created At: {this.props.log.createdAt.toLocaleString()}
+        <br />
+        Updated At: {this.props.log.updatedAt.toLocaleString()} <br />
+        shipIsBroken? {this.props.log.shipIsBroken ? "true" : "false"} <br />
         <button>
           <a href="/logs">All Logs</a>
         </button>

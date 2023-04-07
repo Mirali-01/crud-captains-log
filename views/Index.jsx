@@ -12,9 +12,15 @@ export class Index extends Component {
         <ul>
           {this.props.logs.map((log, i) => {
             return (
-              <li key={i}>
-                <a href={`/logs/${log.id}`}>{log.title}</a>
-              </li>
+              <div key={i}>
+                <li>
+                  <a href={`/logs/${log.id}`}>{log.title}</a>
+                </li>
+                <br />
+                <form action={`/logs/${log._id}?_method=DELETE`} method="POST">
+                  <input type="submit" value="DELETE" />
+                </form>
+              </div>
             );
           })}
         </ul>

@@ -13,7 +13,7 @@ export class New extends Component {
           <br />
           Ship Is Broken? <input type="checkbox" name="shipIsBroken" />
           <br />
-          <input type="submit" value="Submit" />
+          <input type="submit" name="" value="Submit" />
           <br />
         </form>
       </div>
