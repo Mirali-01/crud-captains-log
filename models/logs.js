@@ -3,7 +3,7 @@ const logSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
     entry: { type: String, required: true },
-    shipIsBroken: { Boolean, default: true },
+    shipIsBroken: { type: Boolean, default: true },
   },
   { timestamps: true }
 );
