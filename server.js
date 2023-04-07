@@ -37,13 +37,22 @@ app.get("/logs/seed", (req, res) => {
       shipIsBroken: false,
     },
     (err, data) => {
-      res.redirect("/new");
+      res.redirect("/logs/new");
     }
   );
 });
 
+// [INDEX]
+app.get("/logs", (req, res) => {
+  Log.find({}, (error, allLogs) => {
+    res.render("Index", {
+      logs: allLogs,
+    });
+  });
+});
+
 // [NEW]
-app.get("/new", (req, res) => {
+app.get("/logs/new", (req, res) => {
   res.render("New");
 });
 

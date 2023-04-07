@@ -4,6 +4,8 @@ export class New extends Component {
   render() {
     return (
       <div>
+        <h1>New Log Page</h1>
+        <br />
         <form action="/logs" method="POST">
           Title: <input type="text" name="title" placeholder="" />
           <br />
