@@ -94,6 +94,17 @@ app.get("/logs/:id/edit", (req, res) => {
   });
 });
 
+// [PUT]
+app.put("/logs/:id", (req, res) => {
+  req.body.shipIsBroken === "on"
+    ? (req.body.shipIsBroken = true)
+    : (req.body.shipIsBroken = false);
+  Log.findByIdAndUpdate(req.params.id, req.body, (err, updatedLog) => {
+    console.log(updatedLog);
+    res.redirect(`/logs/${req.params.id}`);
+  });
+});
+
 // Listen
 app.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}`);

@@ -7,9 +7,9 @@ export class New extends Component {
         <h1>New Log Page</h1>
         <br />
         <form action="/logs" method="POST">
-          Title: <input type="text" name="title" placeholder="" />
+          Title: <input type="text" name="title" />
           <br />
-          Entry: <input type="textarea" name="entry" placeholder="" />
+          Entry: <input type="textarea" name="entry" />
           <br />
           Ship Is Broken? <input type="checkbox" name="shipIsBroken" />
           <br />
