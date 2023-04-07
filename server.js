@@ -56,6 +56,15 @@ app.get("/logs/new", (req, res) => {
   res.render("New");
 });
 
+// [SHOW]
+app.get("/logs/:id", (req, res) => {
+  Log.findById(req.params.id, (err, foundLog) => {
+    res.render("Show", {
+      log: foundLog,
+    });
+  });
+});
+
 // [POST] --> Create
 app.post("/logs", (req, res) => {
   req.body.shipIsBroken === "on"
